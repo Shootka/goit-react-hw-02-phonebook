@@ -29,7 +29,7 @@ class App extends Component {
         return alert('already in cotacts');
       } else {
         return {
-          contacts: [...state.contacts, { id: Math.floor(Math.random() * 999293), ...data }],
+          contacts: [...state.contacts, { id: Math.floor(Math.random() * 999293).toString(10), ...data }],
         };
       }
     });
