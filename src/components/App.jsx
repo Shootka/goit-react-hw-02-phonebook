@@ -18,7 +18,6 @@ class App extends Component {
     this.setState({
       filter: event.target.value,
     });
-    console.log();
   };
 
   submitHandler = (data) => {
@@ -27,7 +26,7 @@ class App extends Component {
         .map(el => el.name)
         .includes(data.name)
       ) {
-        return alert('error');
+        return alert('already in cotacts');
       } else {
         return {
           contacts: [...state.contacts, { id: Math.floor(Math.random() * 999293), ...data }],
@@ -41,7 +40,6 @@ class App extends Component {
         contacts: state.contacts.filter(el => el.id !== event.target.id)
       }
     })
-    console.log(event.target);
   }
   render() {
     return (
